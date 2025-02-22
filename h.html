@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>关于你</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+        }
+ 
+        .cube-container {
+            perspective: 1000px;
+            width: 200px;
+            height: 200px;
+        }
+ 
+        .cube {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            transform-style: preserve-3d;
+            animation: rotateCube 5s infinite linear;
+        }
+ 
+        .cube img {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            backface-visibility: hidden;
+        }
+ 
+        .cube img:nth-child(1) { transform: rotateY(0deg) translateZ(100px); }
+        .cube img:nth-child(2) { transform: rotateY(90deg) translateZ(100px); }
+        .cube img:nth-child(3) { transform: rotateY(180deg) translateZ(100px); }
+        .cube img:nth-child(4) { transform: rotateY(-90deg) translateZ(100px); }
+        .cube img:nth-child(5) { transform: rotateX(90deg) translateZ(100px); }
+        .cube img:nth-child(6) { transform: rotateX(-90deg) translateZ(100px); }
+ 
+        @keyframes rotateCube {
+            from { transform: rotateX(-30deg) rotateY(0deg); }
+            to { transform: rotateX(-30deg) rotateY(360deg); }
+        }
+ 
+        .message {
+            margin-top: 20px;
+            font-size: 24px;
+            color: #333;
+            text-align: center;
+        }
+        #musicPlayer {
+    position: absolute; /* 使用绝对定位 */
+    top: 50px; /* 距离页面顶部50像素 */
+    left: 50px; /* 距离页面左侧50像素 */
+  }
+  #ccc {
+    position: absolute; /* 使用绝对定位 */
+    top: 700px; /* 距离页面顶部50像素 */
+    left: 600px; /* 距离页面左侧50像素 */
+  }
+  #ccc {
+font-size: 50px; /* 使用像素单位 */
+}
+
+h1 {
+font-size: 3em; /* 使用em单位 */
+}
+
+h2 {
+font-size: 150%; /* 使用百分比单位 */
+}
+#ccc{
+    color: aqua;
+}
+    </style>
+</head>
+<body background="IMG_0763(20250222-212448).JPG" 
+style="background-repeat:no-repeat
+background-attachment:fixed;
+background-size:100% 100%; ">
+
+    <div class="cube-container">
+        <div class="cube">
+            <img src="IMG_0758(20250222-210523).jpg" alt="Front Face">
+            <img src="IMG_0752(20250222-001855).jpg" alt="Right Face">
+            <img src="IMG_0760(20250222-210936).jpg" alt="Back Face">
+            <img src="IMG_0761(20250222-211031).jpg" alt="Left Face">
+            <img src="IMG_0762(20250222-211707).jpg" alt="Top Face">
+            <img src="031go1a5hbu0vy6gl6cixbm3631.png" alt="Bottom Face">
+        </div>
+    </div>
+    <audio id="musicPlayer" src="M500000AZdTD09A7jL.mp3" loop="loop" controls="controls" autoplay="autoplay"></audio>
+    <div id="ccc" class="message">
+        相思可见知何日，此时此夜难为情。
+    </div>
+</body>
+</html>
